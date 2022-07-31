@@ -20,7 +20,7 @@ class EmptyList extends StatelessWidget {
               child: Text(
                 "No coffee added!",
                 style: TextStyle(
-                    color: Colors.black,
+                    color: Colors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.w500),
               ),

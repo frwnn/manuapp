@@ -11,32 +11,35 @@ class OrderView extends GetView<OrderController> {
     return Scaffold(
       backgroundColor: Colors.black,
       body: SafeArea(
-          child: Expanded(
-        child: ListView(
-          shrinkWrap: true,
-          scrollDirection: Axis.vertical,
-          padding: EdgeInsets.all(20),
-          children: [
-            Expanded(
-                child: Container(
-              width: MediaQuery.of(context).size.width,
-              height: 620,
-              child: ListView(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text("Riwayat Order",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold)),
-                  ),
-                  OrderHistory()
-                ],
-              ),
-            )),
-          ],
-        ),
+          child: ListView(
+        shrinkWrap: true,
+        scrollDirection: Axis.vertical,
+        padding: EdgeInsets.all(20),
+        children: [
+          Container(
+            width: MediaQuery.of(context).size.width,
+            height: 620,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  "Riwayat Order",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                OrderHistory(),
+              ],
+            ),
+          ),
+        ],
       )),
     );
   }

@@ -9,6 +9,7 @@ import '../controllers/login_controller.dart';
 class LoginView extends GetView<LoginController> {
   final emailC = TextEditingController(text: "greensand.up@gmail.com");
   final passC = TextEditingController(text: "123123");
+  bool _obsecuretext = true;
 
   final authC = Get.find<AuthController>();
   @override
@@ -28,8 +29,18 @@ class LoginView extends GetView<LoginController> {
                 controller: emailC,
                 decoration: InputDecoration(labelText: "Email")),
             TextField(
+                obscureText: _obsecuretext,
                 controller: passC,
-                decoration: InputDecoration(labelText: "Password")),
+                decoration: InputDecoration(
+                    labelText: "Password",
+                    suffixIcon: GestureDetector(
+                      onTap: () {
+                        _obsecuretext = !_obsecuretext;
+                      },
+                      child: Icon(_obsecuretext
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                    ))),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,

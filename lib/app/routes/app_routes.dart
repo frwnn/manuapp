@@ -12,6 +12,18 @@ abstract class Routes {
   static const CART = _Paths.CART;
   static const ORDER = _Paths.ORDER;
   static const PROFIL = _Paths.PROFIL;
+  static const USER = _Paths.USER;
+  static const HOMEADMIN = _Paths.HOMEADMIN;
+  static const EDIT_PRODUCT = _Paths.EDIT_PRODUCT;
+  static const ADD_PRODUCT = _Paths.ADD_PRODUCT;
+  static const ADMINBOTNAV = _Paths.ADMINBOTNAV;
+  static const PROMOSIADMIN = _Paths.PROMOSIADMIN;
+  static const EDIT_PROMOSI = _Paths.EDIT_PROMOSI;
+  static const ADD_PROMOSI = _Paths.ADD_PROMOSI;
+  static const PAYMENT = _Paths.PAYMENT;
+  static const PAYMENT_SUCCESS = _Paths.PAYMENT_SUCCESS;
+  static const KRITIK_SARAN = _Paths.KRITIK_SARAN;
+  static const SARAN_ADMIN = _Paths.SARAN_ADMIN;
 }
 
 abstract class _Paths {
@@ -25,4 +37,16 @@ abstract class _Paths {
   static const CART = '/cart';
   static const ORDER = '/order';
   static const PROFIL = '/profil';
+  static const USER = '/user';
+  static const HOMEADMIN = '/homeadmin';
+  static const EDIT_PRODUCT = '/edit-product';
+  static const ADD_PRODUCT = '/add-product';
+  static const ADMINBOTNAV = '/adminbotnav';
+  static const PROMOSIADMIN = '/promosiadmin';
+  static const EDIT_PROMOSI = '/edit-promosi';
+  static const ADD_PROMOSI = '/add-promosi';
+  static const PAYMENT = '/payment';
+  static const PAYMENT_SUCCESS = '/payment-success';
+  static const KRITIK_SARAN = '/kritik-saran';
+  static const SARAN_ADMIN = '/saran-admin';
 }

@@ -1,1 +1,1 @@
-export 'category_model.dart';
+export 'promosi_model.dart';

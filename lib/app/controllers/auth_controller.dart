@@ -82,6 +82,7 @@ class AuthController extends GetxController {
         'email': email,
         'name': name,
         'phone': phone,
+        'role': "user",
         'cart': []
       });
       await myUser.user!.sendEmailVerification();

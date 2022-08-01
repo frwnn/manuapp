@@ -10,7 +10,7 @@ class SaranAdminView extends GetView<SaranAdminController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SaranAdminView'),
+        title: Text('Saran Admin'),
         centerTitle: true,
       ),
       body: StreamBuilder<QuerySnapshot<Object?>>(

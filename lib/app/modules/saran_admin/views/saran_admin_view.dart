@@ -10,7 +10,8 @@ class SaranAdminView extends GetView<SaranAdminController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Saran Admin'),
+        backgroundColor: Colors.white,
+        title: Text('Saran Admin', style: TextStyle(color: Colors.black)),
         centerTitle: true,
       ),
       body: StreamBuilder<QuerySnapshot<Object?>>(
@@ -20,12 +21,14 @@ class SaranAdminView extends GetView<SaranAdminController> {
               var listAlldoc = snapshot.data!.docs;
               return ListView.builder(
                 itemCount: listAlldoc.length,
-                itemBuilder: (context, index) => ListTile(
-                  onTap: () => {},
-                  title: Text(
-                      '${(listAlldoc[index].data() as Map<String, dynamic>)["saran"]}'),
-                  subtitle: Text(
-                      '${(listAlldoc[index].data() as Map<String, dynamic>)["time"]}'),
+                itemBuilder: (context, index) => Card(
+                  child: ListTile(
+                    onTap: () => {},
+                    title: Text(
+                        '${(listAlldoc[index].data() as Map<String, dynamic>)["saran"]}'),
+                    subtitle: Text(
+                        '${(listAlldoc[index].data() as Map<String, dynamic>)["time"]}'),
+                  ),
                 ),
               );
             }

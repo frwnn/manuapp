@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 import '../../homeadmin/controllers/homeadmin_controller.dart';
+import '../../order_admin/controllers/order_admin_controller.dart';
 import '../../promosiadmin/controllers/promosiadmin_controller.dart';
 import '../../saran_admin/controllers/saran_admin_controller.dart';
 import '../controllers/adminbotnav_controller.dart';
@@ -19,6 +20,9 @@ class AdminbotnavBinding extends Bindings {
     );
     Get.lazyPut<SaranAdminController>(
       () => SaranAdminController(),
+    );
+    Get.lazyPut<OrderAdminController>(
+      () => OrderAdminController(),
     );
   }
 }

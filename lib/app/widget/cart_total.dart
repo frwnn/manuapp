@@ -48,6 +48,7 @@ class CartTotal extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     child: InkWell(
                       onTap: () {
+                        controller.addOrder();
                         Navigator.push(
                             context,
                             MaterialPageRoute(

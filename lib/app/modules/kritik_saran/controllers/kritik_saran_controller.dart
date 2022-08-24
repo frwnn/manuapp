@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:manuapp/app/modules/cart/views/cart_view.dart';
+import 'package:intl/intl.dart';
 
 class KritikSaranController extends GetxController {
   late TextEditingController saranC;
@@ -11,8 +12,9 @@ class KritikSaranController extends GetxController {
     CollectionReference sarans = firestore.collection("saran");
 
     try {
-      String dateNow = DateTime.now().toIso8601String();
-      await sarans.add({"saran": saran, "time": dateNow});
+      DateTime dateNow = DateTime.now();
+      String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(dateNow);
+      await sarans.add({"saran": saran, "time": formattedDate});
 
       Get.defaultDialog(
           title: "Berhasil",

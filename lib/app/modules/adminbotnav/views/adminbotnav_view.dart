@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:manuapp/app/modules/homeadmin/views/homeadmin_view.dart';
+import 'package:manuapp/app/modules/order_admin/views/order_admin_view.dart';
 import 'package:manuapp/app/modules/promosiadmin/views/promosiadmin_view.dart';
 import 'package:manuapp/app/modules/saran_admin/views/saran_admin_view.dart';
 
@@ -17,7 +18,12 @@ class AdminbotnavView extends GetView<AdminbotnavController> {
           body: SafeArea(
             child: IndexedStack(
               index: controller.tabIndex,
-              children: [HomeadminView(), PromosiadminView(), SaranAdminView()],
+              children: [
+                OrderAdminView(),
+                HomeadminView(),
+                PromosiadminView(),
+                SaranAdminView()
+              ],
             ),
           ),
           bottomNavigationBar: BottomNavigationBar(
@@ -32,6 +38,10 @@ class AdminbotnavView extends GetView<AdminbotnavController> {
             elevation: 0,
             items: [
               _adminbottomNavigationBarItem(
+                icon: CupertinoIcons.cart,
+                label: 'Order',
+              ),
+              _adminbottomNavigationBarItem(
                 icon: CupertinoIcons.add_circled,
                 label: 'Product',
               ),
@@ -40,8 +50,8 @@ class AdminbotnavView extends GetView<AdminbotnavController> {
                 label: 'Promosi',
               ),
               _adminbottomNavigationBarItem(
-                icon: CupertinoIcons.cart,
-                label: 'Order',
+                icon: CupertinoIcons.star,
+                label: 'Rating',
               ),
               _adminbottomNavigationBarItem(
                 icon: CupertinoIcons.doc_plaintext,

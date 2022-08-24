@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manuapp/app/controllers/auth_controller.dart';
 
-import '../../../routes/app_pages.dart';
-import '../controllers/homeadmin_controller.dart';
+import '../controllers/order_admin_controller.dart';
 
-class HomeadminView extends GetView<HomeadminController> {
+class OrderAdminView extends GetView<OrderAdminController> {
   final authC = Get.find<AuthController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
-        title: Text('Home Admin', style: TextStyle(color: Colors.black)),
+        title: Text(
+          'Order Admin',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
@@ -33,16 +35,25 @@ class HomeadminView extends GetView<HomeadminController> {
                 itemCount: listAlldoc.length,
                 itemBuilder: (context, index) => Card(
                   child: ListTile(
-                    onTap: () => Get.toNamed(Routes.EDIT_PRODUCT,
-                        arguments: listAlldoc[index].id),
-                    title: Text(
-                        '${(listAlldoc[index].data() as Map<String, dynamic>)["name"]}'),
+                    // onTap: () => Get.toNamed(Routes.EDIT_PRODUCT,
+                    //     arguments: listAlldoc[index].id),
+                    title: Row(
+                      children: [
+                        Text(
+                            '${(listAlldoc[index].data() as Map<String, dynamic>)["product"]}'),
+                        Text(
+                          '${(listAlldoc[index].data() as Map<String, dynamic>)["status"]}',
+                          style: TextStyle(color: Colors.green),
+                        ),
+                      ],
+                    ),
                     subtitle: Text(
-                        'Rp.${(listAlldoc[index].data() as Map<String, dynamic>)["price"]}'),
+                        '${(listAlldoc[index].data() as Map<String, dynamic>)["time"]}'),
+
                     trailing: IconButton(
                         onPressed: () =>
-                            controller.deleteProduct(listAlldoc[index].id),
-                        icon: Icon(Icons.delete)),
+                            controller.editStatus(listAlldoc[index].id),
+                        icon: Icon(Icons.check_circle_outline_sharp)),
                   ),
                 ),
               );
@@ -51,10 +62,6 @@ class HomeadminView extends GetView<HomeadminController> {
               child: CircularProgressIndicator(),
             );
           }),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => Get.toNamed(Routes.ADD_PRODUCT),
-        child: Icon(Icons.add),
-      ),
     );
   }
 }

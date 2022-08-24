@@ -13,7 +13,8 @@ class PromosiadminView extends GetView<PromosiadminController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Promosi Admin'),
+        backgroundColor: Colors.white,
+        title: Text('Promosi Admin', style: TextStyle(color: Colors.black)),
         centerTitle: true,
         actions: [
           IconButton(
@@ -30,17 +31,19 @@ class PromosiadminView extends GetView<PromosiadminController> {
               var listPromdoc = snapshot.data!.docs;
               return ListView.builder(
                 itemCount: listPromdoc.length,
-                itemBuilder: (context, index) => ListTile(
-                  onTap: () => Get.toNamed(Routes.EDIT_PROMOSI,
-                      arguments: listPromdoc[index].id),
-                  title: Text(
-                      '${(listPromdoc[index].data() as Map<String, dynamic>)["name"]}'),
-                  subtitle: Text(
-                      '${(listPromdoc[index].data() as Map<String, dynamic>)["snk"]}'),
-                  trailing: IconButton(
-                      onPressed: () =>
-                          controller.deletePromosi(listPromdoc[index].id),
-                      icon: Icon(Icons.delete)),
+                itemBuilder: (context, index) => Card(
+                  child: ListTile(
+                    onTap: () => Get.toNamed(Routes.EDIT_PROMOSI,
+                        arguments: listPromdoc[index].id),
+                    title: Text(
+                        '${(listPromdoc[index].data() as Map<String, dynamic>)["name"]}'),
+                    subtitle: Text(
+                        '${(listPromdoc[index].data() as Map<String, dynamic>)["snk"]}'),
+                    trailing: IconButton(
+                        onPressed: () =>
+                            controller.deletePromosi(listPromdoc[index].id),
+                        icon: Icon(Icons.delete)),
+                  ),
                 ),
               );
             }

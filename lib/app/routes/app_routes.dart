@@ -24,6 +24,7 @@ abstract class Routes {
   static const PAYMENT_SUCCESS = _Paths.PAYMENT_SUCCESS;
   static const KRITIK_SARAN = _Paths.KRITIK_SARAN;
   static const SARAN_ADMIN = _Paths.SARAN_ADMIN;
+  static const ORDER_ADMIN = _Paths.ORDER_ADMIN;
 }
 
 abstract class _Paths {
@@ -49,4 +50,5 @@ abstract class _Paths {
   static const PAYMENT_SUCCESS = '/payment-success';
   static const KRITIK_SARAN = '/kritik-saran';
   static const SARAN_ADMIN = '/saran-admin';
+  static const ORDER_ADMIN = '/order-admin';
 }

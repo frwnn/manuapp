@@ -11,6 +11,14 @@ class VoucherView extends GetView<VoucherController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        centerTitle: true,
+        title: Text(
+          "Promosi",
+          style: TextStyle(fontSize: 29),
+        ),
+      ),
       backgroundColor: Colors.black,
       body: SafeArea(
           child: ListView(
@@ -24,19 +32,6 @@ class VoucherView extends GetView<VoucherController> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  "Promosi",
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
                 PromosiCard(),
               ],
             ),

@@ -1,20 +1,16 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get/get.dart';
 
 class OrderController extends GetxController {
-  //TODO: Implement OrderController
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  Future<QuerySnapshot<Object?>> getData() async {
+    CollectionReference orders = firestore.collection("order");
+    return orders.get();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  Stream<QuerySnapshot<Object?>> streamData() {
+    CollectionReference orders = firestore.collection("order");
+    return orders.snapshots();
   }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

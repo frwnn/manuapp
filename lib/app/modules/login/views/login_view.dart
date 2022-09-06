@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
 import '../../../controllers/auth_controller.dart';
 import '../../../routes/app_pages.dart';
 import '../controllers/login_controller.dart';
 
 class LoginView extends GetView<LoginController> {
-  final emailC = TextEditingController(text: "greensand.up@gmail.com");
-  final passC = TextEditingController(text: "123123");
+  final emailC = TextEditingController(text: "");
+  final passC = TextEditingController(text: "");
 
   final authC = Get.find<AuthController>();
   @override
@@ -27,9 +25,20 @@ class LoginView extends GetView<LoginController> {
             TextField(
                 controller: emailC,
                 decoration: InputDecoration(labelText: "Email")),
-            TextField(
+            Obx(() => TextField(
+                obscureText: controller.isPasswordHidden.value,
                 controller: passC,
-                decoration: InputDecoration(labelText: "Password")),
+                decoration: InputDecoration(
+                    labelText: "Password",
+                    suffix: InkWell(
+                      child: Icon(controller.isPasswordHidden.value
+                          ? Icons.visibility
+                          : Icons.visibility_off),
+                      onTap: () {
+                        controller.isPasswordHidden.value =
+                            !controller.isPasswordHidden.value;
+                      },
+                    )))),
             SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.end,

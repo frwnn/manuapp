@@ -55,7 +55,7 @@ class _BodyProfileState extends State<BodyProfile> {
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.w800),
               ),
               Text(
-                "Greensand.up@gmail.comm",
+                "Greensand.up@gmail.com",
                 style: TextStyle(
                     fontSize: 17,
                     fontWeight: FontWeight.w500,
@@ -63,15 +63,6 @@ class _BodyProfileState extends State<BodyProfile> {
               ),
             ],
           ),
-          SizedBox(
-            width: 10,
-          ),
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.edit_outlined,
-                color: Colors.grey,
-              ))
         ],
       ),
     );

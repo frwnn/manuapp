@@ -16,7 +16,7 @@ List<Product_spesial> demo_products = [
   Product_spesial(
       image: "images/biji.JPG",
       title: "Manu Signature",
-      price: 98000,
+      price: 000,
       ingre: "Engrekang & Mandailing\nArabica"),
   Product_spesial(
       image: "images/vss.JPG",

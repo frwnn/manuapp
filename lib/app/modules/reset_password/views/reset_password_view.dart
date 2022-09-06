@@ -20,7 +20,7 @@ class ResetPasswordView extends GetView<ResetPasswordController> {
         child: Column(
           children: [
             SizedBox(height: 50),
-            Image.asset('assets/images/manubg.png'),
+            Image.asset('images/manubg.png'),
             TextField(
                 controller: emailC,
                 decoration: InputDecoration(labelText: "Email")),

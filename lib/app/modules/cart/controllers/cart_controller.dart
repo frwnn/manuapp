@@ -1,8 +1,11 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:manuapp/app/models/Product.dart';
+import 'package:intl/intl.dart';
 
 class CartController extends GetxController {
+  FirebaseFirestore firestore = FirebaseFirestore.instance;
   var _products = {}.obs;
 
   void addProduct(Product product) {
@@ -34,5 +37,37 @@ class CartController extends GetxController {
       .reduce((value, element) => value + element)
       .toStringAsFixed(0);
 
-  get isi => _products.entries.map((product) => product.key.name).toList();
+  get promm => promosiS();
+  int promosiS() {
+    if (total >= 35000) {
+      return 0;
+    } else
+      return 10000;
+  }
+
+  int totalnih(total, promosiS) {
+    return total + promosiS(total);
+  }
+
+  get isi => _products.entries.map((product) => product.key.title).toList();
+
+  void addOrder() async {
+    CollectionReference order = firestore.collection("order");
+
+    try {
+      DateTime dateNow = DateTime.now();
+      String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(dateNow);
+      await order.add({
+        "product": isi,
+        "total": total,
+        "time": formattedDate,
+        "status": 'diproses'
+      });
+    } catch (e) {
+      Get.defaultDialog(
+        title: "Terjadi Kesalahan",
+        middleText: "Gagal menambahkan produk",
+      );
+    }
+  }
 }

@@ -66,9 +66,13 @@ class CartProductCard extends StatelessWidget {
               children: [
                 Text(
                   product.title,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
-                Text('Rp.${product.price.toString()}'),
+                Text('Rp.${product.price.toString()}',
+                    style: TextStyle(color: Colors.white)),
               ],
             ),
           ),
@@ -76,14 +80,14 @@ class CartProductCard extends StatelessWidget {
             onPressed: () {
               controller.removeProduct(product);
             },
-            icon: Icon(Icons.remove_circle),
+            icon: Icon(Icons.remove_circle, color: Colors.white),
           ),
-          Text('$quantity'),
+          Text('$quantity', style: TextStyle(color: Colors.white)),
           IconButton(
             onPressed: () {
               controller.addProduct(product);
             },
-            icon: Icon(Icons.add_circle),
+            icon: Icon(Icons.add_circle, color: Colors.white),
           ),
         ],
       ),

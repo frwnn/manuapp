@@ -10,8 +10,6 @@ dependencies:
   firebase_auth: ^3.4.1
   get: 4.6.5
   firebase_core: ^1.19.1
-  flutter: 
-    sdk: flutter
   blurrycontainer: ^1.0.2
   smooth_page_indicator: ^1.0.0+2
   carousel_slider: ^4.1.1
@@ -21,6 +19,13 @@ dependencies:
   cloud_firestore: ^3.2.1
   firebase_core_web: ^1.6.6
   firebase_messaging: ^12.0.0
+  flutter_rating_bar: ^4.0.1
+  logger: ^1.1.0
+  pdf: 3.8.3
+  path_provider: 2.0.11
+  open_file: 3.2.1
+  flutter: 
+    sdk: flutter
 
 dev_dependencies: 
   flutter_lints: ^1.0.0
@@ -28,7 +33,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter: 
+  assets: 
+    - images/
   uses-material-design: true
 
-  assets:
-    - images/

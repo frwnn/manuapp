@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:manuapp/app/widget/coffee_details_page.dart';
 
 import '../../../controllers/auth_controller.dart';
-import '../../../models/category_model.dart';
+import '../../../models/promosi_model.dart';
 import '../../../widget/carousel_card.dart';
 import '../../../widget/coffee_card.dart';
 import '../../../widget/special_coffee_card.dart';
@@ -37,8 +37,8 @@ class HomeView extends GetView<HomeController> {
                       viewportFraction: 0.9,
                       enlargeCenterPage: true,
                       enlargeStrategy: CenterPageEnlargeStrategy.height),
-                  items: Category.categories
-                      .map((category) => CarouselCard(category: category))
+                  items: Promosi.promosis
+                      .map((promosi) => CarouselCard(promosi: promosi))
                       .toList(),
                 ),
                 SizedBox(

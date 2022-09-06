@@ -37,11 +37,12 @@ class CartController extends GetxController {
       .reduce((value, element) => value + element)
       .toStringAsFixed(0);
 
-  int promosiS(total) {
-    if (total >= 30000) {
+  get promm => promosiS();
+  int promosiS() {
+    if (total >= 35000) {
       return 0;
     } else
-      return 5000;
+      return 10000;
   }
 
   int totalnih(total, promosiS) {

@@ -22,6 +22,21 @@ class CartTotal extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
               child: Column(
                 children: [
+                  // Row(
+                  //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  //   children: [
+                  //     Text('Diskon',
+                  //         style: TextStyle(
+                  //             color: Colors.white,
+                  //             fontSize: 17,
+                  //             fontWeight: FontWeight.bold)),
+                  //     Text('${controller.promm}',
+                  //         style: TextStyle(
+                  //             color: Colors.white,
+                  //             fontSize: 17,
+                  //             fontWeight: FontWeight.bold)),
+                  //   ],
+                  // ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

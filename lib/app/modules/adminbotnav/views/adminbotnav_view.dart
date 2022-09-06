@@ -53,10 +53,6 @@ class AdminbotnavView extends GetView<AdminbotnavController> {
                 icon: CupertinoIcons.star,
                 label: 'Rating',
               ),
-              _adminbottomNavigationBarItem(
-                icon: CupertinoIcons.doc_plaintext,
-                label: 'Report',
-              ),
             ],
           ),
         );
